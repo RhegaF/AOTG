@@ -5,8 +5,8 @@ const {publickey,privatekey} = require('../../config/db.config')
 const {decrypt3DES, encrypt3DES} = require('../../auth/tripledes')
 
 
-router.post('/quick-premium-test', (req, res, next) => {
-    MwClient.quickPremium(req.body)
+router.post('/calculate-premium', (req, res, next) => {
+    MwClient.calculatePremium(req.body)
       .then(({ data }) => res.json(data))
       .catch(err => { next(err) })
   })

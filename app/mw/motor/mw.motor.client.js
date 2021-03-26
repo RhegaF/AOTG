@@ -40,9 +40,12 @@ const quote_client = {
   quickPremium (payload) {
     return http.post(`${MOTORAPI}/quotes/calculate_inaccurate_premium`, payload)
   },
-  testget (payload) {
-    return http.post('http://192.168.112.100/WebAPI/MiddlewareAPI/SearchProduct', payload)
+  calculatePremium (payload) {
+    return http.post(`${MOTORAPI}/quotes/calculate_premium`, payload)
   }
+  // testget (payload) {
+  //   return http.post('http://192.168.112.100/WebAPI/MiddlewareAPI/SearchProduct', payload)
+  // }
 }
 
 module.exports = {...listing_client, ...quote_client}
